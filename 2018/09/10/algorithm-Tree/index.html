@@ -90,7 +90,8 @@
 <meta property="og:image" content="http://yoursite.com/2018/09/10/algorithm-Tree/1.1.jpg">
 <meta property="og:image" content="http://yoursite.com/2018/09/10/algorithm-Tree/2.1.jpg">
 <meta property="og:image" content="http://yoursite.com/2018/09/10/algorithm-Tree/2.2.jpg">
-<meta property="og:updated_time" content="2019-01-05T09:51:59.111Z">
+<meta property="og:image" content="http://yoursite.com/2018/09/10/algorithm-Tree/3.1.jpg">
+<meta property="og:updated_time" content="2019-01-06T03:40:10.577Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="树">
 <meta name="twitter:description" content="前言今天说说树。下面这就是一棵树： 当然我们今天要说的是一种数据结构 - 树。">
@@ -354,6 +355,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/09/10/algorithm-Tree/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/09/10/algorithm-Tree/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -418,6 +429,12 @@
 <li>祖先（Ancestor）：从根到该节点所经分支上的所有节点都称为该节点的祖先；</li>
 <li>子孙（Descendant）：以某节点为根的子树中任一节点都称为该节点的子孙。</li>
 </ul>
+<h1 id="存储模型"><a href="#存储模型" class="headerlink" title="存储模型"></a>存储模型</h1><p>由于树的子节点的数量是不确定的，因此通常在节点内部使用链表在存储该节点的子节点，这种表示方法也被称为孩子兄弟表示法，即：</p>
+<ul>
+<li>每个节点都有一个指向其第一个孩子的指针；</li>
+<li>每个节点都有一个指向其第一个右兄弟的指针。</li>
+</ul>
+<p>图2-1中的树的存储结构可以表示为图3-1所示：<br><img src="/2018/09/10/algorithm-Tree/3.1.jpg" title="图3-1 孩子兄弟表示法"></p>
 <h1 id="分类及应用"><a href="#分类及应用" class="headerlink" title="分类及应用"></a>分类及应用</h1><h2 id="根据是否有序分类"><a href="#根据是否有序分类" class="headerlink" title="根据是否有序分类"></a>根据是否有序分类</h2><ul>
 <li>无序树<br>树的任意节点的子节点没有顺序关系。</li>
 <li>有序树<br>树的任意节点的子节点有顺序关系。</li>
@@ -504,6 +521,14 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      
+        <div onclick="showGitment()" id="gitment-display-button">显示 Gitment 评论</div>
+        <div id="gitment-container" style="display:none"></div>
+      
+    </div>
 
   
 
@@ -608,7 +633,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#介绍"><span class="nav-number">2.</span> <span class="nav-text">介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#定义"><span class="nav-number">2.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#意义"><span class="nav-number">2.2.</span> <span class="nav-text">意义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相关术语"><span class="nav-number">2.3.</span> <span class="nav-text">相关术语</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#分类及应用"><span class="nav-number">3.</span> <span class="nav-text">分类及应用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#根据是否有序分类"><span class="nav-number">3.1.</span> <span class="nav-text">根据是否有序分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二叉树"><span class="nav-number">3.2.</span> <span class="nav-text">二叉树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用的树"><span class="nav-number">3.3.</span> <span class="nav-text">常用的树</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#介绍"><span class="nav-number">2.</span> <span class="nav-text">介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#定义"><span class="nav-number">2.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#意义"><span class="nav-number">2.2.</span> <span class="nav-text">意义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相关术语"><span class="nav-number">2.3.</span> <span class="nav-text">相关术语</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#存储模型"><span class="nav-number">3.</span> <span class="nav-text">存储模型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#分类及应用"><span class="nav-number">4.</span> <span class="nav-text">分类及应用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#根据是否有序分类"><span class="nav-number">4.1.</span> <span class="nav-text">根据是否有序分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二叉树"><span class="nav-number">4.2.</span> <span class="nav-text">二叉树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用的树"><span class="nav-number">4.3.</span> <span class="nav-text">常用的树</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -812,6 +837,52 @@
 
 
 
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+        
+        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
+        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
+    
+<!-- END LOCAL -->
+
+    
+      <style>
+        a.gitment-editor-footer-tip { display: none; }
+        .gitment-container.gitment-footer-container { display: none; }
+      </style>
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname, 
+            owner: 'amalgam-silver',
+            repo: 'amalgam-silver.github.com',
+            
+            lang: "" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: '3e43f7e9eb923190c8929a699323cc623352cf9a',
+            
+                client_id: 'b04071753df2e15d44ae'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      function showGitment(){
+        document.getElementById("gitment-display-button").style.display = "none";
+        document.getElementById("gitment-container").style.display = "block";
+        renderGitment();
+      }
+      
+      </script>
+    
 
 
 
