@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="JVM,">
 
 
 
@@ -79,13 +79,24 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hg&#39;s blog">
-<meta property="og:url" content="http://yoursite.com/tags/树/index.html">
+<meta name="description" content="前言 class文件的格式 如何通过jclasslib插件解析class文件">
+<meta name="keywords" content="JVM">
+<meta property="og:type" content="article">
+<meta property="og:title" content="class文件格式">
+<meta property="og:url" content="http://yoursite.com/2020/10/21/class文件格式/index.html">
 <meta property="og:site_name" content="Hg&#39;s blog">
+<meta property="og:description" content="前言 class文件的格式 如何通过jclasslib插件解析class文件">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/2020/10/21/class文件格式/3.1.png">
+<meta property="og:image" content="http://yoursite.com/2020/10/21/class文件格式/3.2.png">
+<meta property="og:image" content="http://yoursite.com/2020/10/21/class文件格式/3.3.png">
+<meta property="og:image" content="http://yoursite.com/2020/10/21/class文件格式/3.4.png">
+<meta property="og:image" content="http://yoursite.com/2020/10/21/class文件格式/3.5.png">
+<meta property="og:updated_time" content="2020-10-21T06:34:25.220Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hg&#39;s blog">
+<meta name="twitter:title" content="class文件格式">
+<meta name="twitter:description" content="前言 class文件的格式 如何通过jclasslib插件解析class文件">
+<meta name="twitter:image" content="http://yoursite.com/2020/10/21/class文件格式/3.1.png">
 
 
 
@@ -115,13 +126,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/树/">
+  <link rel="canonical" href="http://yoursite.com/2020/10/21/class文件格式/">
 
 
 
 
 
-  <title>Tag: 树 | Hg's blog</title>
+  <title>class文件格式 | Hg's blog</title>
   
 
 
@@ -140,7 +151,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -266,130 +277,257 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block tag">
-
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>树<small>Tag</small>
-        </h1>
-      </div>
-
-      
-        
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/10/21/class文件格式/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hg">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hg's blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/10/02/algorithm-redBlackTree/" itemprop="url">
-              
-                <span itemprop="name">红黑树</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">class文件格式</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-10-02T16:54:21+08:00" content="2018-10-02">
-          10-02
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-10-21T11:02:41+08:00">
+                2020-10-21
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/JVM/" itemprop="url" rel="index">
+                    <span itemprop="name">JVM</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/10/21/class文件格式/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2020/10/21/class文件格式/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i> 浏览
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/10/01/algorithm-binarySortTree/" itemprop="url">
-              
-                <span itemprop="name">二叉排序树</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-10-01T19:12:42+08:00" content="2018-10-01">
-          10-01
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
 
       
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/09/27/algorithm-binaryTree/" itemprop="url">
-              
-                <span itemprop="name">二叉树</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-09-27T19:51:24+08:00" content="2018-09-27">
-          09-27
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/09/10/algorithm-Tree/" itemprop="url">
-              
-                <span itemprop="name">树</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-09-10T19:53:05+08:00" content="2018-09-10">
-          09-10
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><ul>
+<li>class文件的格式</li>
+<li>如何通过jclasslib插件解析class文件</li>
+</ul>
+<a id="more"></a>
+<h1 id="class文件"><a href="#class文件" class="headerlink" title="class文件"></a>class文件</h1><ul>
+<li>java文件通过javac编译后得到class文件</li>
+<li>是二进制字节流</li>
+</ul>
+<p>比如一个最简单的java文件如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ClassFileFormatT01</span> </span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>编译完成后得到 <strong>ClassFileFormatT01.class</strong> 文件 ，可以通过 <strong>notepad++</strong> 中的 Hex-Editor插件查看其16进制格式的内容：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">ca fe ba be 00 00 00 34 00 10 0a 00 03 00 0d 07 </span><br><span class="line">00 0e 07 00 0f 01 00 06 3c 69 6e 69 74 3e 01 00 </span><br><span class="line">03 28 29 56 01 00 04 43 6f 64 65 01 00 0f 4c 69 </span><br><span class="line">6e 65 4e 75 6d 62 65 72 54 61 62 6c 65 01 00 12 </span><br><span class="line">4c 6f 63 61 6c 56 61 72 69 61 62 6c 65 54 61 62 </span><br><span class="line">6c 65 01 00 04 74 68 69 73 01 00 14 4c 43 6c 61 </span><br><span class="line">73 73 46 69 6c 65 46 6f 72 6d 61 74 54 30 31 3b </span><br><span class="line">01 00 0a 53 6f 75 72 63 65 46 69 6c 65 01 00 17 </span><br><span class="line">43 6c 61 73 73 46 69 6c 65 46 6f 72 6d 61 74 54 </span><br><span class="line">30 31 2e 6a 61 76 61 0c 00 04 00 05 01 00 12 43 </span><br><span class="line">6c 61 73 73 46 69 6c 65 46 6f 72 6d 61 74 54 30 </span><br><span class="line">31 01 00 10 6a 61 76 61 2f 6c 61 6e 67 2f 4f 62 </span><br><span class="line">6a 65 63 74 00 21 00 02 00 03 00 00 00 00 00 01 </span><br><span class="line">00 01 00 04 00 05 00 01 00 06 00 00 00 2f 00 01 </span><br><span class="line">00 01 00 00 00 05 2a b7 00 01 b1 00 00 00 02 00 </span><br><span class="line">07 00 00 00 06 00 01 00 00 00 01 00 08 00 00 00 </span><br><span class="line">0c 00 01 00 00 00 05 00 09 00 0a 00 00 00 01 00 </span><br><span class="line">0b 00 00 00 02 00 0c</span><br></pre></td></tr></table></figure>
+<p>接下来我们就来看看这些看似毫无头绪的二进制码代表着什么。</p>
+<h1 id="class文件格式"><a href="#class文件格式" class="headerlink" title="class文件格式"></a>class文件格式</h1><h2 id="class文件构成"><a href="#class文件构成" class="headerlink" title="class文件构成"></a>class文件构成</h2><p>一个class文件由以下部分组成，如下图所示：</p>
+<p><img src="/2020/10/21/class文件格式/3.1.png" alt="class文件格式"></p>
+<ul>
+<li>class文件标志 <strong>Magic Number</strong>，4字节，固定为 0xcafe babe</li>
+<li>版本号 <ul>
+<li><strong>Minor Version</strong>：2字节，jdk1.8编译出的class文件固定为0x0000</li>
+<li><strong>MajorVersion</strong>：2字节，jdk1.8编译出的class文件固定为0x0034</li>
+</ul>
+</li>
+<li>常量池信息 <ul>
+<li><strong>constant_pool_count</strong>：2字节，常量池内的常量的数量</li>
+<li><strong>constant_pool</strong>：常量池，由于其保留了index为0的常量，因此常量池里实际的常量池数量为<strong>constant_pool_count - 1</strong></li>
+</ul>
+</li>
+<li>访问修饰符 <strong>access flags</strong>：2字节，用于描述该类是public还是private等等</li>
+<li>当前类 <strong>this_class</strong>：2字节，当前类在常量池中的index，如：本例中等于2，则找到常量池中的2#常量，即可找到<strong>ClassFileFormatT01</strong>类的信息</li>
+<li>父类 <strong>super_class</strong>：2字节，父类在常量池中的index，如：本例中等于3，则找到常量池中的3#常亮，即可找到父类<strong>java/lang/Object</strong>的信息</li>
+<li>接口信息<ul>
+<li><strong>interfaces_count</strong>：2字节</li>
+<li><strong>interfaces</strong>：实际数量为 <strong>interfaces_count</strong></li>
+</ul>
+</li>
+<li>属性信息 <ul>
+<li><strong>fields_count</strong>：2字节</li>
+<li><strong>fields</strong>：实际数量为 <strong>fields_count</strong></li>
+</ul>
+</li>
+<li>方法信息 <ul>
+<li><strong>methods_count</strong>：2字节</li>
+<li><strong>methods</strong>：实际数量为 <strong>methods_count</strong></li>
+</ul>
+</li>
+<li>附加属性信息 <ul>
+<li><strong>attributes_count</strong>：2字节</li>
+<li><strong>attributes</strong>：实际数量为 <strong>attributes_count</strong></li>
+</ul>
+</li>
+</ul>
+<h2 id="插件-jclasslib"><a href="#插件-jclasslib" class="headerlink" title="插件 jclasslib"></a>插件 jclasslib</h2><p>上一节只是对class文件的构成做了一个概览性质的描述，实际上还有很多细节，比如：常量池中某一个常量的格式是怎样的？</p>
+<p>这些细节就放到文章最后以附录的形式贴上去吧，毕竟，一般也不太会人工一字节一字节的对着二进制码去解析。</p>
+<p>我们可以通过 <strong>IDEA</strong> 中的 <strong>jclasslib</strong> 插件，方便的解析class文件。</p>
+<p>安装完 <strong>jclasslib</strong> 插件后， 重启 <strong>IDEA</strong>，编译java文件，将光标放在该java文件中，就可以在 <strong>View</strong> 菜单下找到 <strong>Show Bytecode With jclasslib</strong>选项了。</p>
+<p>我们通过 <strong>jclasslib</strong> 分析本文开头编译得到的 <strong>ClassFileFormatT01.class</strong> 文件，如下图所示：</p>
+<p><img src="/2020/10/21/class文件格式/3.2.png" alt="jclasslib"></p>
+<p>可以看到在弹出的页面的左侧框中，有 <strong>General Information</strong>、<strong>Constant Pool</strong>、<strong>Interfaces</strong>、<strong>Fields</strong>、<strong>Methods</strong>、<strong>Attributes</strong>几个大类，右侧框内测试选中条目的详细信息。</p>
+<p>比如点击概览信息 General Information，我们能看到该类的jdk编译版本为1.8，常量池数量为16，访问级别为public，类名是ClassFileFormatT01，父类是 java/lang/Object，接口数量和属性数量为0，方法数量为1，附加属性数量为1。</p>
+<p>点开ConstanPool，还能看到常量池中每个常亮的具体信息。</p>
+<p>比如在总览信息中，<strong>This class</strong> 是 <code>cp_info #2 &lt;ClassFileFormatT01&gt;</code>，就表示2号常量中保存了 <strong>This class</strong> 的信息，于是我们找到2号常量，如下图所示，可以看到2号常量是一个类型为 <strong>CONSTANT_Class_info</strong> 的常量，它有一个 <strong>Class name</strong> 属性，即类名，这个属性的值又指向了14号常量。</p>
+<p><img src="/2020/10/21/class文件格式/3.3.png" alt="2号常量"></p>
+<p>我们再去看14号常量，可以看到14号常量是一个类型为 <strong>CONSTANT_Utf8_Info</strong> 的常亮，即字符串，字符串的内容就是 <strong>ClassFileFormatT01</strong>，即类名。</p>
+<p><img src="/2020/10/21/class文件格式/3.4.png" alt="14号常量"></p>
+<p>此外，还有个值得注意的地方：源码中，我们什么都没写，但是编译出来的class文件中却有1个方法，并且方法的名称是 <strong>init</strong>，也就是说java帮我们自动生成了一个构造方法。</p>
+<p><img src="/2020/10/21/class文件格式/3.5.png" alt="构造方法"></p>
+<p>我们再来简单看下这个构造方法的字节码，就3个指令（点击指令，可以直接链接到Oracle官网文档该指令的描述处，非常方便）：</p>
+<ol>
+<li>把0号本地变量压栈，0号变量可以在 <strong>init</strong> 下面的 <strong>Code</strong> 下面的 <strong>LocalVariableTable</strong>中找到，就是 <strong>this</strong></li>
+<li>调用了一个方法，这个方法要去1号常量里找，实际上就是父类即 <strong>java/lang/Object</strong> 的构造方法。 </li>
+<li>返回</li>
+</ol>
+<h1 id="附录：Class文件格式详情"><a href="#附录：Class文件格式详情" class="headerlink" title="附录：Class文件格式详情"></a>附录：Class文件格式详情</h1><p>。。。实在是太多了。。。</p>
+<p>详见《Java Virtual Machine Specification》的第四章 “<strong>4. The class File Format</strong>”</p>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JVM/" rel="tag"># JVM</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/10/21/JVM-基础知识/" rel="next" title="JVM 基础知识">
+                <i class="fa fa-chevron-left"></i> JVM 基础知识
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -397,6 +535,17 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      
+        <div id="gitment-container"></div>
+      
+    </div>
+
+  
+
+
 
         </div>
         
@@ -417,8 +566,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -478,6 +636,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#class文件"><span class="nav-number">2.</span> <span class="nav-text">class文件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#class文件格式"><span class="nav-number">3.</span> <span class="nav-text">class文件格式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#class文件构成"><span class="nav-number">3.1.</span> <span class="nav-text">class文件构成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插件-jclasslib"><span class="nav-number">3.2.</span> <span class="nav-text">插件 jclasslib</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#附录：Class文件格式详情"><span class="nav-number">4.</span> <span class="nav-text">附录：Class文件格式详情</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -638,6 +812,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -689,6 +867,30 @@
       </style>
     
 
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname, 
+            owner: 'amalgam-silver',
+            repo: 'amalgam-silver.github.com',
+            
+            lang: "" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: '3e43f7e9eb923190c8929a699323cc623352cf9a',
+            
+                client_id: 'b04071753df2e15d44ae'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      renderGitment();
+      
+      </script>
     
 
 
