@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[字典树]]></title>
-    <url>%2F2019%2F01%2F02%2Falgorithm-trieTree%2F</url>
-    <content type="text"></content>
+    <title><![CDATA[JVM 基础知识]]></title>
+    <url>%2F2020%2F10%2F21%2FJVM-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%2F</url>
+    <content type="text"><![CDATA[前言JVM最基础的背景知识。 Java从编码到执行 java文件通过javac编译成class文件 程序运行时，类加载器将class加载进内存 代码由字节码解释器解释运行 或 由JIT即时编译器编译成本地代码运行 JVM 与 Java Java： 一种跨平台的语言，即不需要修改代码即可在Windows、Linux、MacOS等多个平台上运行 JVM： 一种跨语言的平台，任何语言，只要最后编译成符合规范的 .class 文件，即可在JVM上运行 是一种规范：Java Virtual Machine Specification 是虚构出来的一台计算机：有字节码指令集、内存管理（如 栈、堆、方法区等） 常见的 JVM 实现 HotSpot: 由Oracle官方发布、维护 可通过 java -version 查看 JRockit: BEA发布，曾号称世界上最快的JVM 被Oracle收购，已合并入HotSpot J9: IBM Microsoft VM Taobao VM: HotSpot 深度定制版本 Liquid VM: 直接针对硬件 azul zing: 商业收费版本，非常贵 最新垃圾回收的业界标杆 JDK、JRE、JVM的关系]]></content>
+      <categories>
+        <category>JVM</category>
+      </categories>
       <tags>
-        <tag>树</tag>
-        <tag>数据结构</tag>
-        <tag>字典树</tag>
+        <tag>JVM</tag>
       </tags>
   </entry>
   <entry>
@@ -27,6 +28,9 @@
     <title><![CDATA[二叉排序树]]></title>
     <url>%2F2018%2F10%2F01%2Falgorithm-binarySortTree%2F</url>
     <content type="text"><![CDATA[介绍原理数据结构插入删除遍历代码实现]]></content>
+      <categories>
+        <category>数据结构</category>
+      </categories>
       <tags>
         <tag>树</tag>
         <tag>数据结构</tag>
