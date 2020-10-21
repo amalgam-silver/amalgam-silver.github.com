@@ -92,7 +92,7 @@
 <meta property="og:image" content="http://yoursite.com/2020/10/21/class文件格式/3.3.png">
 <meta property="og:image" content="http://yoursite.com/2020/10/21/class文件格式/3.4.png">
 <meta property="og:image" content="http://yoursite.com/2020/10/21/class文件格式/3.5.png">
-<meta property="og:updated_time" content="2020-10-21T06:34:25.220Z">
+<meta property="og:updated_time" content="2020-10-21T06:40:34.394Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="class文件格式">
 <meta name="twitter:description" content="前言 class文件的格式 如何通过jclasslib插件解析class文件">
@@ -405,7 +405,7 @@
 <li>是二进制字节流</li>
 </ul>
 <p>比如一个最简单的java文件如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ClassFileFormatT01</span> </span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>编译完成后得到 <strong>ClassFileFormatT01.class</strong> 文件 ，可以通过 <strong>notepad++</strong> 中的 Hex-Editor插件查看其16进制格式的内容：</p>
+<p>编译完成后得到 <strong>ClassFileFormatT01.class</strong> 文件 ，可以通过 <strong>notepad++</strong> 中的 <strong>Hex-Editor</strong> 插件查看其16进制格式的内容：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">ca fe ba be 00 00 00 34 00 10 0a 00 03 00 0d 07 </span><br><span class="line">00 0e 07 00 0f 01 00 06 3c 69 6e 69 74 3e 01 00 </span><br><span class="line">03 28 29 56 01 00 04 43 6f 64 65 01 00 0f 4c 69 </span><br><span class="line">6e 65 4e 75 6d 62 65 72 54 61 62 6c 65 01 00 12 </span><br><span class="line">4c 6f 63 61 6c 56 61 72 69 61 62 6c 65 54 61 62 </span><br><span class="line">6c 65 01 00 04 74 68 69 73 01 00 14 4c 43 6c 61 </span><br><span class="line">73 73 46 69 6c 65 46 6f 72 6d 61 74 54 30 31 3b </span><br><span class="line">01 00 0a 53 6f 75 72 63 65 46 69 6c 65 01 00 17 </span><br><span class="line">43 6c 61 73 73 46 69 6c 65 46 6f 72 6d 61 74 54 </span><br><span class="line">30 31 2e 6a 61 76 61 0c 00 04 00 05 01 00 12 43 </span><br><span class="line">6c 61 73 73 46 69 6c 65 46 6f 72 6d 61 74 54 30 </span><br><span class="line">31 01 00 10 6a 61 76 61 2f 6c 61 6e 67 2f 4f 62 </span><br><span class="line">6a 65 63 74 00 21 00 02 00 03 00 00 00 00 00 01 </span><br><span class="line">00 01 00 04 00 05 00 01 00 06 00 00 00 2f 00 01 </span><br><span class="line">00 01 00 00 00 05 2a b7 00 01 b1 00 00 00 02 00 </span><br><span class="line">07 00 00 00 06 00 01 00 00 00 01 00 08 00 00 00 </span><br><span class="line">0c 00 01 00 00 00 05 00 09 00 0a 00 00 00 01 00 </span><br><span class="line">0b 00 00 00 02 00 0c</span><br></pre></td></tr></table></figure>
 <p>接下来我们就来看看这些看似毫无头绪的二进制码代表着什么。</p>
 <h1 id="class文件格式"><a href="#class文件格式" class="headerlink" title="class文件格式"></a>class文件格式</h1><h2 id="class文件构成"><a href="#class文件构成" class="headerlink" title="class文件构成"></a>class文件构成</h2><p>一个class文件由以下部分组成，如下图所示：</p>
@@ -424,7 +424,7 @@
 </li>
 <li>访问修饰符 <strong>access flags</strong>：2字节，用于描述该类是public还是private等等</li>
 <li>当前类 <strong>this_class</strong>：2字节，当前类在常量池中的index，如：本例中等于2，则找到常量池中的2#常量，即可找到<strong>ClassFileFormatT01</strong>类的信息</li>
-<li>父类 <strong>super_class</strong>：2字节，父类在常量池中的index，如：本例中等于3，则找到常量池中的3#常亮，即可找到父类<strong>java/lang/Object</strong>的信息</li>
+<li>父类 <strong>super_class</strong>：2字节，父类在常量池中的index，如：本例中等于3，则找到常量池中的3#常量，即可找到父类<strong>java/lang/Object</strong>的信息</li>
 <li>接口信息<ul>
 <li><strong>interfaces_count</strong>：2字节</li>
 <li><strong>interfaces</strong>：实际数量为 <strong>interfaces_count</strong></li>
