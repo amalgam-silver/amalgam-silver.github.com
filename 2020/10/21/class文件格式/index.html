@@ -92,7 +92,7 @@
 <meta property="og:image" content="http://yoursite.com/2020/10/21/class文件格式/3.3.png">
 <meta property="og:image" content="http://yoursite.com/2020/10/21/class文件格式/3.4.png">
 <meta property="og:image" content="http://yoursite.com/2020/10/21/class文件格式/3.5.png">
-<meta property="og:updated_time" content="2020-10-21T06:40:34.394Z">
+<meta property="og:updated_time" content="2020-10-21T06:46:15.380Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="class文件格式">
 <meta name="twitter:description" content="前言 class文件的格式 如何通过jclasslib插件解析class文件">
@@ -452,12 +452,12 @@
 <p>安装完 <strong>jclasslib</strong> 插件后， 重启 <strong>IDEA</strong>，编译java文件，将光标放在该java文件中，就可以在 <strong>View</strong> 菜单下找到 <strong>Show Bytecode With jclasslib</strong>选项了。</p>
 <p>我们通过 <strong>jclasslib</strong> 分析本文开头编译得到的 <strong>ClassFileFormatT01.class</strong> 文件，如下图所示：</p>
 <p><img src="/2020/10/21/class文件格式/3.2.png" alt="jclasslib"></p>
-<p>可以看到在弹出的页面的左侧框中，有 <strong>General Information</strong>、<strong>Constant Pool</strong>、<strong>Interfaces</strong>、<strong>Fields</strong>、<strong>Methods</strong>、<strong>Attributes</strong>几个大类，右侧框内测试选中条目的详细信息。</p>
+<p>可以看到在弹出的页面的左侧框中，有 <strong>General Information</strong>、<strong>Constant Pool</strong>、<strong>Interfaces</strong>、<strong>Fields</strong>、<strong>Methods</strong>、<strong>Attributes</strong>几个大类，右侧框内则是选中条目的详细信息。</p>
 <p>比如点击概览信息 General Information，我们能看到该类的jdk编译版本为1.8，常量池数量为16，访问级别为public，类名是ClassFileFormatT01，父类是 java/lang/Object，接口数量和属性数量为0，方法数量为1，附加属性数量为1。</p>
-<p>点开ConstanPool，还能看到常量池中每个常亮的具体信息。</p>
+<p>点开ConstanPool，还能看到常量池中每个常量的具体信息。</p>
 <p>比如在总览信息中，<strong>This class</strong> 是 <code>cp_info #2 &lt;ClassFileFormatT01&gt;</code>，就表示2号常量中保存了 <strong>This class</strong> 的信息，于是我们找到2号常量，如下图所示，可以看到2号常量是一个类型为 <strong>CONSTANT_Class_info</strong> 的常量，它有一个 <strong>Class name</strong> 属性，即类名，这个属性的值又指向了14号常量。</p>
 <p><img src="/2020/10/21/class文件格式/3.3.png" alt="2号常量"></p>
-<p>我们再去看14号常量，可以看到14号常量是一个类型为 <strong>CONSTANT_Utf8_Info</strong> 的常亮，即字符串，字符串的内容就是 <strong>ClassFileFormatT01</strong>，即类名。</p>
+<p>我们再去看14号常量，可以看到14号常量是一个类型为 <strong>CONSTANT_Utf8_Info</strong> 的常量，即字符串，字符串的内容就是 <strong>ClassFileFormatT01</strong>，即类名。</p>
 <p><img src="/2020/10/21/class文件格式/3.4.png" alt="14号常量"></p>
 <p>此外，还有个值得注意的地方：源码中，我们什么都没写，但是编译出来的class文件中却有1个方法，并且方法的名称是 <strong>init</strong>，也就是说java帮我们自动生成了一个构造方法。</p>
 <p><img src="/2020/10/21/class文件格式/3.5.png" alt="构造方法"></p>
@@ -468,7 +468,7 @@
 <li>返回</li>
 </ol>
 <h1 id="附录：Class文件格式详情"><a href="#附录：Class文件格式详情" class="headerlink" title="附录：Class文件格式详情"></a>附录：Class文件格式详情</h1><p>。。。实在是太多了。。。</p>
-<p>详见《Java Virtual Machine Specification》的第四章 “<strong>4. The class File Format</strong>”</p>
+<p>详见<a href="https://docs.oracle.com/javase/specs/jvms/se8/html/jvms-4.html" target="_blank" rel="noopener">《Java Virtual Machine Specification》的第四章 “<strong>4. The class File Format</strong>”</a></p>
 
       
     </div>
