@@ -113,7 +113,7 @@
 <meta property="og:image" content="http://yoursite.com/2020/10/21/JVM-运行时数据区/7.8.png">
 <meta property="og:image" content="http://yoursite.com/2020/10/21/JVM-运行时数据区/7.9.png">
 <meta property="og:image" content="http://yoursite.com/2020/10/21/JVM-运行时数据区/7.10.png">
-<meta property="og:updated_time" content="2020-10-24T03:11:36.407Z">
+<meta property="og:updated_time" content="2020-10-28T15:53:48.614Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JVM 运行时数据区及常用指令">
 <meta name="twitter:description" content="前言 JVM 运行时数据区的组成 栈帧 举例说明基于栈帧的运行机制 总结JVM中的常用指令">
@@ -431,11 +431,11 @@
 <li>Direct Memory：jdk1.4以后，为提高效率，NIO使用直接内存访问内核空间的内存（零拷贝）</li>
 <li>method area：<ul>
 <li>方法区，存放了class数据、Run-time Constant Pool。</li>
-<li><strong>Permanent Space</strong> 和 <strong>Meta Space</strong> 分别是 <strong>JDK1.8之前</strong> 和 <strong>JDK1.8及之后</strong> 对 method area 的实现</li>
-<li>Perm Space：<ol>
+<li><strong>Permanent Generation</strong> 和 <strong>Meta Space</strong> 分别是 <strong>JDK1.8之前</strong> 和 <strong>JDK1.8及之后</strong> 对 method area 的实现</li>
+<li>Perm Generation：<ol>
 <li>&lt; JDK1.7</li>
-<li>字符串常量存储在Perm Space中</li>
-<li>启动时可以指定Perm Space大小，运行过程中不会变，存满即报OOM，FGC不会清理Perm Space</li>
+<li>字符串常量存储在Perm Generation中</li>
+<li>启动时可以指定Perm Generation大小，运行过程中大小不会变，存满即报OOM，FGC不会清理Perm Generation</li>
 </ol>
 </li>
 <li>Meta Space<ol>
@@ -698,6 +698,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2020/10/27/JVM-垃圾回收（1）/" rel="prev" title="JVM-垃圾回收（1）-- 基础知识">
+                JVM-垃圾回收（1）-- 基础知识 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -780,7 +784,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -802,7 +806,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
