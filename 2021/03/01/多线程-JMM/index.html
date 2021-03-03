@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="JMM,多线程,内存可见性,happens before,">
 
 
 
@@ -79,13 +79,21 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hg&#39;s blog">
-<meta property="og:url" content="http://yoursite.com/page/2/index.html">
+<meta name="description" content="前言在多线程编程之中，通常我们最常需要考虑的是两个问题：1. 竞争问题；2. 协调问题。 竞争问题是指多个线程对同一个资源的竞争，比如：需要修改同一个变量、写同一个文件或者修改数据库的同一条记录…… 对于竞争问题，我们通常通过锁机制来保证同一个资源每次只能被一个线程访问。 至于协调问题，一般又分为两种：1. 协调多个线程执行的操作的顺序；2. 多个线程间信息的传递 事实上，问题1往往也是通过问题2">
+<meta name="keywords" content="JMM,多线程,内存可见性,happens before">
+<meta property="og:type" content="article">
+<meta property="og:title" content="多线程-JMM">
+<meta property="og:url" content="http://yoursite.com/2021/03/01/多线程-JMM/index.html">
 <meta property="og:site_name" content="Hg&#39;s blog">
+<meta property="og:description" content="前言在多线程编程之中，通常我们最常需要考虑的是两个问题：1. 竞争问题；2. 协调问题。 竞争问题是指多个线程对同一个资源的竞争，比如：需要修改同一个变量、写同一个文件或者修改数据库的同一条记录…… 对于竞争问题，我们通常通过锁机制来保证同一个资源每次只能被一个线程访问。 至于协调问题，一般又分为两种：1. 协调多个线程执行的操作的顺序；2. 多个线程间信息的传递 事实上，问题1往往也是通过问题2">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/2021/03/01/多线程-JMM/1.png">
+<meta property="og:image" content="http://yoursite.com/2021/03/01/多线程-JMM/2.png">
+<meta property="og:updated_time" content="2021-03-03T01:22:30.661Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hg&#39;s blog">
+<meta name="twitter:title" content="多线程-JMM">
+<meta name="twitter:description" content="前言在多线程编程之中，通常我们最常需要考虑的是两个问题：1. 竞争问题；2. 协调问题。 竞争问题是指多个线程对同一个资源的竞争，比如：需要修改同一个变量、写同一个文件或者修改数据库的同一条记录…… 对于竞争问题，我们通常通过锁机制来保证同一个资源每次只能被一个线程访问。 至于协调问题，一般又分为两种：1. 协调多个线程执行的操作的顺序；2. 多个线程间信息的传递 事实上，问题1往往也是通过问题2">
+<meta name="twitter:image" content="http://yoursite.com/2021/03/01/多线程-JMM/1.png">
 
 
 
@@ -115,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/page/2/">
+  <link rel="canonical" href="http://yoursite.com/2021/03/01/多线程-JMM/">
 
 
 
 
 
-  <title>Hg's blog</title>
+  <title>多线程-JMM | Hg's blog</title>
   
 
 
@@ -140,8 +148,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -266,9 +273,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -281,7 +288,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/10/21/JVM-运行时数据区/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/03/01/多线程-JMM/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Hg">
@@ -298,9 +305,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/10/21/JVM-运行时数据区/" itemprop="url">JVM 运行时数据区及常用指令</a></h1>
+          <h1 class="post-title" itemprop="name headline">多线程-JMM</h1>
         
 
         <div class="post-meta">
@@ -312,8 +317,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-10-21T16:02:42+08:00">
-                2020-10-21
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-03-01T15:35:08+08:00">
+                2021-03-01
               </time>
             
 
@@ -335,8 +340,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/JVM/" itemprop="url" rel="index">
-                    <span itemprop="name">JVM</span>
+                  <a href="/categories/多线程/" itemprop="url" rel="index">
+                    <span itemprop="name">多线程</span>
                   </a>
                 </span>
 
@@ -348,11 +353,26 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2021/03/01/多线程-JMM/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2021/03/01/多线程-JMM/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
           
 
           
           
 
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i> 浏览
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
           
 
           
@@ -372,170 +392,108 @@
       
 
       
-        
-          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><ul>
-<li>JVM 运行时数据区的组成</li>
-<li>栈帧</li>
-<li>举例说明基于栈帧的运行机制</li>
-<li>总结JVM中的常用指令</li>
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在多线程编程之中，通常我们最常需要考虑的是两个问题：1. 竞争问题；2. 协调问题。</p>
+<p>竞争问题是指多个线程对同一个资源的竞争，比如：需要修改同一个变量、写同一个文件或者修改数据库的同一条记录……</p>
+<p>对于竞争问题，我们通常通过锁机制来保证同一个资源每次只能被一个线程访问。</p>
+<p>至于协调问题，一般又分为两种：1. 协调多个线程执行的操作的顺序；2. 多个线程间信息的传递</p>
+<p>事实上，问题1往往也是通过问题2来解决的，比如：</p>
+<blockquote>
+<p>一个线程继续向下执行的条件是判断某个变量是否为 <code>true</code></p>
+<p>而另一个线程中，将该变量的值设为 <code>true</code></p>
+<p>实际上，就是一个线程通过共享变量，向另一个线程传递了信息，从而控制了其执行的行为</p>
+</blockquote>
+<p>因此，协调问题，最终又可归结为多线程间信息的传递。</p>
+<p>Java中，多线程间的信息传递是靠共享变量实现的。而 <strong>JMM（Java Memory Model / java内存模型）</strong> 可以说是Java提供的一系列准则和规范，旨在帮助程序猿们准确、高效地解决多线程编程中的协调问题（在JMM中称之为同步问题 <strong>Synchronzation</strong>）。</p>
+<p>我们在很多文章、很多地方听到的许多很难望文生义的名词（诸如：顺序一致性、happens-before原则、内存可见性、MESI等），都来自于JMM。甚至于JMM本身，从其字面意义就很难理解这到底是个什么玩意儿。</p>
+<a id="more"></a>
+<h1 id="JMM究竟是什么？"><a href="#JMM究竟是什么？" class="headerlink" title="JMM究竟是什么？"></a>JMM究竟是什么？</h1><p>我们现在说的JMM一般指从JDK5开始使用的新内存模型，详细描述可以查阅<a href="https://jcp.org/en/jsr/detail?id=133" target="_blank" rel="noopener">JSR-133</a>（注：JSR - Java Specification Requests/ Java 规范提案）</p>
+<p>Oracle官方文档<a href="https://docs.oracle.com/javase/specs/jls/se8/html/jls-17.html#jls-17.4" target="_blank" rel="noopener">《Java Language Specification》第17章 <strong>Threads and Locks</strong>，第4小节 <strong>Memory Model</strong></a> 中也有收录。</p>
+<p>其开头就有这么一段话：</p>
+<blockquote>
+<p>The memory model describes possible behaviors of a program. An implementation is free to produce any code it likes, as long as all resulting executions of a program produce a result that can be predicted by the memory model.</p>
+</blockquote>
+<p>大概意思是：JMM可以描述一段程序可能的行为。多线程编程中，如果我们按照JMM的规则写程序，即我们写的程序可以由JMM规则预测出确定的结果，那么我们就可以放飞自我、为所欲为了（不用担心产生无法预期的bug）。</p>
+<p>不由让我想到了一句话：We are free, in the cage. 只要咱按照JMM给的规矩写程序，咱就是自由的。</p>
+<p>同时，我又想吐槽了，一个指导我们怎么program的规则，干嘛叫Memory Model，为啥不叫Program Model？</p>
+<h1 id="为何需要JMM？"><a href="#为何需要JMM？" class="headerlink" title="为何需要JMM？"></a>为何需要JMM？</h1><p>为何需要JMM，实际上等价于：为什么多线程编程很容易出bug？为什么不按照JMM编程，就容易产生预期之外的结果？</p>
+<p>还是举前言里面的例子，就这么简单的逻辑，能出啥错？</p>
+<blockquote>
+<p>还就真能出错，虽然一个线程将共享变量的值设为了true，但另一个线程可能要等1分钟、10分钟甚至更久才能察觉到这个共享变量的值变为了true，这显然并非我们预期的结果。</p>
+</blockquote>
+<p>为啥会出错？</p>
+<p>因为cpu最终执行的指令并非我们原本写的程序，这其中经过了编译器的优化重排序、cpu的指令重排序以及cpu缓存导致的内存重排序，这些各式各样的优化目的是让程序运行的更快，更有效率，但是却可能导致多线程的程序执行结果无法预期。</p>
+<p>可能我们还有个问题，JMM只和多线程编程有关？如果只用一个线程，就不需要关心JMM了吗？</p>
+<blockquote>
+<p>答案是肯定的，单线程不需要考虑JMM。原因在于，上面所说的导致程序运行结果无法预期的各种重排序优化，都必须要遵循 <strong>as-if-serial</strong> 语义，即无论怎么重排序，单线程程序的执行结果不能被改变。</p>
+</blockquote>
+<h1 id="JMM如何指导我们进行多线程编程？"><a href="#JMM如何指导我们进行多线程编程？" class="headerlink" title="JMM如何指导我们进行多线程编程？"></a>JMM如何指导我们进行多线程编程？</h1><h2 id="JMM对本地内存的抽象"><a href="#JMM对本地内存的抽象" class="headerlink" title="JMM对本地内存的抽象"></a>JMM对本地内存的抽象</h2><p>首先我们需要明确几个定义：</p>
+<ul>
+<li>共享变量（Shared Variables）：JMM将所有存储在堆内存中的变量（包含了对象实例、静态变量和数组元素）称之为共享变量。因为这些变量存储在堆中，所以被所有线程共享，也是线程间消息传递的媒介。</li>
+<li>本地内存（Local Memory）：本地内存是JMM抽象出的一个概念，并不是真实存在的，也就是说无论我们去查JVM的运行时数据区、Object内存布局还是其他什么，都找不到本地内存这么一个东西。这是JMM为了向程序员屏蔽JVM下层的各种优化，而虚拟出来的一个概念。</li>
 </ul>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/10/21/JVM-运行时数据区/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/10/21/class文件格式/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Hg">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hg's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/10/21/class文件格式/" itemprop="url">class文件格式</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-10-21T11:02:41+08:00">
-                2020-10-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/JVM/" itemprop="url" rel="index">
-                    <span itemprop="name">JVM</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><ul>
-<li>class文件的格式</li>
-<li>如何通过jclasslib插件解析class文件</li>
+<p>也就是说，在理解多线程的程序如何运行时，我们不用去管编译器、操作系统、处理器这些底层优化机制，我们只需要想象，共享变量是存储在主存中对所线程共享的，而每个线程都有一个独享的本地内存，本地内存中缓存着共享变量的副本。</p>
+<p>如下图所示：</p>
+<p><img src="/2021/03/01/多线程-JMM/1.png" alt="本地内存"></p>
+<p>可见，各个线程无法直接读写主存中的共享变量，只能接触到各自本地内存中缓存着的共享变量的副本。至于缓存何时将共享变量改变了的值写回主存中去，缓存何时从主存中读取共享变量最新的值，这就由JMM来规定了。</p>
+<p>了解了JMM对本地内存的抽象，我们再来思考一下前言中的例子。</p>
+<blockquote>
+<p>一个线程以为自己将共享变量的值修改为了true，但实际上修改的只是自己本地内存里的副本。</p>
+<p>而另一个线程一直在轮询的也不是真正的共享变量的值，而是自己本地内存里副本的值。</p>
+<p>因此，前一个线程的共享变量副本写回主存的时机，以及后一个线程共享变量副本从主存中读取最新值的时机，都影响着程序运行的实际行为。</p>
+<p>换一种说法，就是前一个线程对共享变量的操作结果对另一个线程来说<strong>不可见</strong>。</p>
+</blockquote>
+<h2 id="happens-before规则"><a href="#happens-before规则" class="headerlink" title="happens-before规则"></a>happens-before规则</h2><p>JMM的核心就是happens-before规则。</p>
+<p>happens-before是什么？</p>
+<blockquote>
+<p>如果我们说 <code>操作A happens-before 操作B</code>，那么其含义是：<strong>操作A的结果对操作B可见</strong>。</p>
+<p>注：happens-before直译过来是“发生在….之前”，但实际上，仅对于消息传递而言，我们并不是特别关注操作A是不是真的在操作B之前执行，我们关心的是操作B要能立刻看到操作A执行的结果。</p>
+</blockquote>
+<p>那么有哪些happens-before规则呢？</p>
+<ul>
+<li>一个线程中的每个操作 happens-before 该线程中的任意后续操作。</li>
+<li>对monitor锁的解锁操作 happens-before 任意后续对该锁的加锁操作。</li>
+<li>对 <strong>volatile</strong> 变量的写操作 happens-before 任意后续对该变量的读操作。</li>
+<li>如果 A happens-before B，B happens-before C，则可以推导出 A happens-before C。</li>
+<li>一个线程中的任意操作 happens-before 从该线程的 <strong>join()</strong> 方法返回。</li>
+<li>调用一个线程的 <strong>start()</strong> 方法 happens-before 该线程中的任意操作。</li>
+<li>一个对象的默认值初始化 happens-before 任何后续操作。(注：这里是默认值初始化，而不是构造函数的初始化，也就是说，一个对象new出来之后，可能不一定能立刻读到构造函数中对各个字段的赋值，但至少能读到默认值0、null或false，而不会读到内存中的随机值。)</li>
 </ul>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/10/21/class文件格式/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+<p>和程序员密切相关的一般是前4条happens-before规则。</p>
+<h2 id="使用happens-before规则"><a href="#使用happens-before规则" class="headerlink" title="使用happens-before规则"></a>使用happens-before规则</h2><p>还是举前言中的例子，如何使用 happens-before 规则改进程序呢？</p>
+<blockquote>
+<p>显然第1个规则不适用，因为对共享变量的读和写是在两个线程中的。</p>
+<p>第2个似乎可以，在读和写共享变量前后分别加上加锁和解锁操作，于是 加锁 - 修改共享变量 - 解锁 happens-before 加锁 - 读共享变量 - 解锁，这样一个线程就能立刻读到另一个线程修改的结果了。</p>
+<p>第3个似乎也可以，对共享变量增加 volatile 关键字，于是 写volatile变量 happens-before 读volatile变量，应该也可以达到我们预期的结果。</p>
+</blockquote>
+<p>坐而论道不若起而行，我们不妨试试。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">T01_happensBefore</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> Boolean flag = <span class="keyword">false</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">"main start"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">new</span> Thread(() -&gt; &#123;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                Thread.sleep(<span class="number">2000</span>);</span><br><span class="line">                flag = <span class="keyword">true</span>;</span><br><span class="line">                System.out.println(<span class="string">"T1 Set flag true!"</span>);</span><br><span class="line">            &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;).start();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> (<span class="keyword">true</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (flag) &#123;</span><br><span class="line">                System.out.println(<span class="string">"got flag..."</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面的代码中，主线程启动了另一个线程，之后就一直检查flag，另一个线程会在2秒后将flag设置为true。</p>
+<p>执行结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">main start</span><br><span class="line">T1 Set flag true!</span><br></pre></td></tr></table></figure>
+<p>却迟迟看不到主线程检查到的flag的变化。</p>
+<p>我们试试volatile，只需要在flag的声明处加上volatile关键字。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">volatile</span> Boolean flag = <span class="keyword">false</span>;</span><br></pre></td></tr></table></figure>
+<p>执行结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">main start</span><br><span class="line">T1 Set flag true!</span><br><span class="line">got flag...</span><br></pre></td></tr></table></figure>
+<p>使用synchronized在flag读写处加锁也是可以达到预期结果的，这里就不再赘述。</p>
+<h1 id="volatile"><a href="#volatile" class="headerlink" title="volatile"></a>volatile</h1><p>从happens-before规则中我们可以看到，volatile是多线程间协调的重要工具，我们来重点看看volatile的特性。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">T02_volatile</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">volatile</span> <span class="keyword">boolean</span> flg = <span class="keyword">false</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">write</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        a = <span class="number">1</span>;          <span class="comment">// 1</span></span><br><span class="line">        flg = <span class="keyword">true</span>;     <span class="comment">// 2</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">read</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (flg) &#123;      <span class="comment">// 3</span></span><br><span class="line">            <span class="keyword">int</span> i = a;  <span class="comment">// 4</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面的代码中，我们假设线程A中先执行write()方法，之后线程B中执行read() 方法。</p>
+<p>按照happens-before规则：</p>
+<ul>
+<li>根据规则1：1 happens-before 2，3 happens-before 4</li>
+<li>根据规则3 volatile规则：2 happens-before 3</li>
+<li>根据规则4 传递性：1 happens-before 4</li>
+</ul>
+<p>于是我们发现：一个线程在对 volatile 变量写之前，对其他共享变量的操作，对于另一个线程读 同一个volatile 变量之后，都是可见的。</p>
+<p>如果我们以JMM对本地内存的抽象来理解，可以认为：</p>
+<ul>
+<li>对一个 volatile 变量写时， JMM 会把该线程本地内存中对应的共享变量副本值写回到主存中去。</li>
+<li>对一个 volatile 变量读时， JMM 会把该线程本地内存中对应的共享变量缓冲置为无效，接下来对共享变量的读取会先从主存中读取到最新值。</li>
+</ul>
+<p>所以，线程A写一个 volatile 变量，随后线程B读这个 volatile 变量，这个过程实质上是线程A通过主存向线程B发送消息（消息是共享变量（不限于volatile变量）的修改）。</p>
+<p><img src="/2021/03/01/多线程-JMM/2.png" alt="线程间通讯"></p>
+
       
     </div>
     
@@ -550,306 +508,42 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/10/21/JVM-基础知识/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Hg">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hg's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/10/21/JVM-基础知识/" itemprop="url">JVM 基础知识</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-10-21T09:56:04+08:00">
-                2020-10-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/JVM/" itemprop="url" rel="index">
-                    <span itemprop="name">JVM</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/JMM/" rel="tag"># JMM</a>
           
-
+            <a href="/tags/多线程/" rel="tag"># 多线程</a>
           
-            
+            <a href="/tags/内存可见性/" rel="tag"># 内存可见性</a>
           
-
+            <a href="/tags/happens-before/" rel="tag"># happens before</a>
           
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
+      
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+      
       
       
 
       
-        
-          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>JVM最基础的背景知识。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/10/21/JVM-基础知识/#more" rel="contents">
-              Read more &raquo;
-            </a>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2021/02/26/多线程-synchronized/" rel="next" title="多线程-synchronized底层实现">
+                <i class="fa fa-chevron-left"></i> 多线程-synchronized底层实现
+              </a>
+            
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
 
-    
+          <span class="post-nav-divider"></span>
 
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/02/algorithm-redBlackTree/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Hg">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hg's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/02/algorithm-redBlackTree/" itemprop="url">红黑树</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+          <div class="post-nav-prev post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-02T16:54:21+08:00">
-                2018-10-02
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/数据结构/" itemprop="url" rel="index">
-                    <span itemprop="name">数据结构</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          <img src="/2018/10/02/algorithm-redBlackTree/1.1.jpg">
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/10/02/algorithm-redBlackTree/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -859,449 +553,11 @@
   </article>
 
 
-    
-      
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/01/algorithm-binarySortTree/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Hg">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hg's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/01/algorithm-binarySortTree/" itemprop="url">二叉排序树</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-01T19:12:42+08:00">
-                2018-10-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/数据结构/" itemprop="url" rel="index">
-                    <span itemprop="name">数据结构</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><h3 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h3><h3 id="插入"><a href="#插入" class="headerlink" title="插入"></a>插入</h3><h3 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h3><h3 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h3><h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2>
-          
-        
+    <div class="post-spread">
       
     </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/27/algorithm-binaryTree/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Hg">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hg's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/27/algorithm-binaryTree/" itemprop="url">二叉树</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-27T19:51:24+08:00">
-                2018-09-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/数据结构/" itemprop="url" rel="index">
-                    <span itemprop="name">数据结构</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>看，一棵二叉树！</p>
-<img src="/2018/09/27/algorithm-binaryTree/1.1.jpg">
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/09/27/algorithm-binaryTree/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/10/algorithm-Tree/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Hg">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hg's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/10/algorithm-Tree/" itemprop="url">树</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-10T19:53:05+08:00">
-                2018-09-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/数据结构/" itemprop="url" rel="index">
-                    <span itemprop="name">数据结构</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>今天说说树。下面这就是一棵树：<br><img src="/2018/09/10/algorithm-Tree/1.1.jpg"></p>
-<p>当然我们今天要说的是一种数据结构 - 树。<br></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/09/10/algorithm-Tree/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
-  </nav>
-
 
 
           </div>
@@ -1309,6 +565,17 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      
+        <div id="gitment-container"></div>
+      
+    </div>
+
+  
+
+
 
         </div>
         
@@ -1329,8 +596,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -1390,6 +666,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JMM究竟是什么？"><span class="nav-number">2.</span> <span class="nav-text">JMM究竟是什么？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#为何需要JMM？"><span class="nav-number">3.</span> <span class="nav-text">为何需要JMM？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JMM如何指导我们进行多线程编程？"><span class="nav-number">4.</span> <span class="nav-text">JMM如何指导我们进行多线程编程？</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#JMM对本地内存的抽象"><span class="nav-number">4.1.</span> <span class="nav-text">JMM对本地内存的抽象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#happens-before规则"><span class="nav-number">4.2.</span> <span class="nav-text">happens-before规则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用happens-before规则"><span class="nav-number">4.3.</span> <span class="nav-text">使用happens-before规则</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#volatile"><span class="nav-number">5.</span> <span class="nav-text">volatile</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1550,6 +842,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -1601,6 +897,30 @@
       </style>
     
 
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname, 
+            owner: 'amalgam-silver',
+            repo: 'amalgam-silver.github.com',
+            
+            lang: "" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: '3e43f7e9eb923190c8929a699323cc623352cf9a',
+            
+                client_id: 'b04071753df2e15d44ae'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      renderGitment();
+      
+      </script>
     
 
 
